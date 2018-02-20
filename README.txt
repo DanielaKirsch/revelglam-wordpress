@@ -22,18 +22,13 @@ Add Brief description
 == Changelog ==
 
 = 0.11 =
-* Plugin skeleton (commented code removed)
-
-= 0.1 =
-* Plugin skeleton
+* baseline plugin code
+* beginnings of admin code - opening wp.media window
 
 == Upgrade Notice ==
 
 = 0.11 =
-* Commented code removed
-
-= 0.1 =
-* Plugin skeleton
+*  code in development
 
 == Author ==
 
