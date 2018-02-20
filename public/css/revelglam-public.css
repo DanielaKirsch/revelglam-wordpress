@@ -1,0 +1,22 @@
+/**
+* All of the CSS for your public-facing functionality should be
+* included in this file.
+*/
+
+/* general css */
+html {
+	overflow-y: scroll;	/* to ensure the page width remains consistent for grid row width calculations */
+}
+
+/*  */
+@media (min-width: 1024px) {
+}
+/* tablet vertical */
+@media (max-width: 768px) {
+}
+/* mobile horizontal */
+@media (max-width: 540px) {
+}
+/* mobile vertical */
+@media (max-width: 320px) {
+}

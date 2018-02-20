@@ -1,0 +1,142 @@
+#work
+#bigflannel
+#revelglam
+
+URL
+
+currently a plugin at:
+http://localhost:8888/wordpress/
+
+
+TO DO
+
+working on how to work with wp.media
+
+the media upload modal
+
+https://codex.wordpress.org/Javascript_Reference/wp
+https://codex.wordpress.org/Media_Library_Screen
+https://codex.wordpress.org/Javascript_Reference/wp.media
+https://github.com/ericandrewlewis/wp-media-javascript-guide/blob/master/sections/wp.media/index.php
+
+https://github.com/ericandrewlewis/wp-media-javascript-guide
+
+https://gist.github.com/thomasgriffin/4410690
+
+
+BEFORE GO LIVE
+
+
+TEST SUBSCRIPTION
+
+
+DESIGN SETUP
+
+
+DEVELOPMENT SETUP
+
+git
+installed
+
+grunt
+installed with grunt dev and browser reload
+
+for errors echo "<script>console.log( 'Debug' );</script>";
+
+
+HOW IT WORKS
+
+uses ...
+
+WordPress-Plugin-Boilerplate
+https://github.com/DevinVinson/WordPress-Plugin-Boilerplate
+
+adding updater to plugin
+https://github.com/YahnisElsts/plugin-update-checker
+server has
+https://github.com/YahnisElsts/wp-update-server
+need to read
+
+updater url is
+https://imagegallerygooglestyle.com/iggs-update/?action=get_metadata&slug=revelglam
+
+testing update API
+https://imagegallerygooglestyle.com/iggs-update/?action=get_metadata&slug=revelglam
+for testing when add update to update server (is it update server related or wordpress related, why did check for updates not work?
+
+removed check for updates link from admin in plugin-update-checker/Puc/v4/Plugin/UpdateChecker.php
+commented out add_filter('plugin_row_meta', array($this, 'addCheckForUpdatesLink'), 10, 2);
+line 85
+
+useful code for admin-display.php
+data for working with settings page and authorisation
+<?php echo 'license_key: ' . get_option( 'license_key' ) . '<br/>'; ?>
+<?php echo 'created_at: ' . get_option( 'created_at' ) . '<br/>'; ?>
+<?php echo 'ever_authorized: ' . get_option( 'ever_authorized' ) . '<br/>'; ?>
+<?php echo 'next_authorization: ' . get_option( 'next_authorization' ) . '<br/>'; ?>
+<?php echo 'subscription_status: ' . get_option( 'subscription_status' ) . '<br/>'; ?>
+
+useful testing code for class-revelglam-admin.php - add at line 100
+// for testing
+//		update_option( 'license_key', '' );
+//		update_option( 'created_at', 'false' );
+//		update_option( 'ever_authorized', 'false' );
+//		update_option( 'next_authorization', 'undetermined' );
+//		update_option( 'subscription_status', 'undetermined' );
+
+considered asynchronous javascript load, needs to be a WordPress thing as use wp_enqueue
+
+
+FUTURE DEVELOPMENT
+
+
+ONGOING ISSUES
+
+
+VALIDATION CHECKS
+
+https://validator.nu/
+
+
+VALIDATION ISSUES
+
+
+CSS VALIDATION
+
+done automatically with HTML validation
+minified
+
+
+JAVASCRIPT
+
+no console.log statements
+no errors
+minified
+
+
+MOBILE FRIENDLY TEST
+
+https://www.google.com/webmasters/tools/mobile-friendly/
+
+
+CROSS BROWSER CHECKS
+
+screenshots
+
+page
+windows & osx
+mobile
+
+
+CHANGELOG
+
+0.11
+2.20.2018
+baseline plugin code
+beginnings of admin code - opening wp.media window
+
+
+
+
+
+
