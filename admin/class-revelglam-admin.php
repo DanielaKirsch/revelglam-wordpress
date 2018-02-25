@@ -39,7 +39,7 @@ class revelglam_Admin {
 	 */
 	public function __construct( $revelglam, $version ) {
 		$this->revelglam = $revelglam;
-		$this->version = $version;		
+		$this->version = $version;	
 	}
 
 
@@ -59,6 +59,7 @@ class revelglam_Admin {
 	 * @since    0.1
 	 */
 	public function enqueue_styles() {
+		$current_timestamp = time();
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -72,7 +73,7 @@ class revelglam_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->revelglam, plugin_dir_url( __FILE__ ) . 'css/revelglam-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->revelglam, plugin_dir_url( __FILE__ ) . 'css/revelglam-admin.css', array(), $current_timestamp, 'all' );
 	}
 
 	/**
@@ -81,7 +82,8 @@ class revelglam_Admin {
 	 * @since    0.1
 	 */
 	public function enqueue_scripts() {
-
+		$current_timestamp = time();
+		
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
@@ -94,7 +96,7 @@ class revelglam_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->revelglam, plugin_dir_url( __FILE__ ) . 'js/revelglam-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->revelglam, plugin_dir_url( __FILE__ ) . 'js/revelglam-admin.js', array( 'jquery' ), $current_timestamp, false );
 	}
 	
 	/**
@@ -121,7 +123,7 @@ class revelglam_Admin {
 	 * @since    0.14
 	 */
 	public function revelglam_Private_Admin_Menu() {
-		add_options_page( 'Revel Glam Options', 'Revel Glam', 'manage_options', 'revelglam', array( $this, 'revelglam_Private_Admin_Menu_Options' ) );
+		add_options_page( 'RevelGlam Options', 'RevelGlam', 'manage_options', 'revelglam', array( $this, 'revelglam_Private_Admin_Menu_Options' ) );
 	}
 	
 	/**
@@ -148,7 +150,7 @@ class revelglam_Admin {
 	 * @since    0.11
 	 */
 	public function revelglam_Add_Media_Button( $editor_id = 'content' ) { 
-		echo '<a href="#" id="insert-revelglam-button" class="button revelglam-activate add-media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr( 'Add Revel Glam', 'revelglam' ) . '"><span class="revelglam-buttons-icon"></span>' . esc_html( 'Add Revel Glam', 'revelglam' ) . '</a>';
+		echo '<a href="#" id="insert-revelglam-button" class="button revelglam-activate add-media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr( 'Add RevelGlam', 'revelglam' ) . '"><span class="revelglam-buttons-icon"></span>' . esc_html( 'Add RevelGlam', 'revelglam' ) . '</a>';
 	}
 	
 	/**

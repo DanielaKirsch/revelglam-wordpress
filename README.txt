@@ -1,11 +1,11 @@
 === Revel Glam ===
-Contributors: Revel Glam
+Contributors: RevelGlam
 Donate link: 
 Tags: 
 Requires at least: 3.5.0
 Tested up to: 4.9
 Stable tag: 0.11
-License: © Revel Glam 2018
+License: © RevelGlam 2018
 
 Add Brief description
 
@@ -32,7 +32,7 @@ Add Brief description
 
 == Author ==
 
-* [Revel Glam Plugin Home Page](https://revelglam.com)
+* [RevelGlam Plugin Home Page](https://revelglam.com)
 
 == Credits ==
 

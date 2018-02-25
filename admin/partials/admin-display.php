@@ -19,7 +19,7 @@
 <form method="post" action="options.php"> 
 	<article>
 		<header>
-			<h1>Revel Glam</h1>
+			<h1>RevelGlam</h1>
 		</header>
 	</article>
 </form>

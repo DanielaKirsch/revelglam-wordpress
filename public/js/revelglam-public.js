@@ -68,7 +68,7 @@ rg.init = function() {
 	rg.windowHeight = jQuery(window).height();
 	// add a debounce
 	jQuery(window).smartresize(function() {
-		rg.windowResized();
+		//rg.windowResized();
 	});
 }
 

@@ -38,6 +38,15 @@ DEVELOPMENT SETUP
 git
 installed
 
+remote
+https://github.com/DanielaKirsch/revelglam-wordpress.git
+
+to push to remote
+$ git push -u origin master
+
+to pull from remote
+$ git pull -u origin master
+
 grunt
 installed with grunt dev and browser reload
 
