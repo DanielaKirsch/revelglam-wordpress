@@ -2,6 +2,7 @@
 
 // set up a single object namespace for the bigflannel thumbgrid app
 var rgadmin = {};
+rgadmin.media;
 
 // data
 
@@ -33,13 +34,13 @@ rgadmin.init = function() {
 
 rgadmin.initMediaFrame = function() {
 	console.log('rgadmin.initMediaFrame');
-	var media = wp.media;
+	rgadmin.media = wp.media;
 	var revelglamImagesFrame = function(parent) {
 		return {
 			createStates: function() {
 				parent.prototype.createStates.apply(this,arguments);
 				this.states.add([
-					new media.controller.revelglamImages({
+					new rgadmin.media.controller.revelglamImages({
 						id: 'revelglam-images',
 						title: 'RevelGlam',
 						content: 'revelglam-images-browse',
@@ -48,15 +49,15 @@ rgadmin.initMediaFrame = function() {
 			},
 		}
 	};
-	media.view.MediaFrame.Post = media.view.MediaFrame.Post.extend(
-		revelglamImagesFrame(media.view.MediaFrame.Post)
+	rgadmin.media.view.MediaFrame.Post = rgadmin.media.view.MediaFrame.Post.extend(
+		revelglamImagesFrame(rgadmin.media.view.MediaFrame.Post)
 	);
-	media.view.revelglamModeSelect = media.View.extend({
+	rgadmin.media.view.revelglamModeSelect = rgadmin.media.View.extend({
 		tagName: 'div',
 		className: 'revelglam-choose-mode',
-		template: media.template('revelglam-choose-mode'),
+		template: rgadmin.media.template('revelglam-choose-mode'),
 	});
-	media.controller.revelglamImages = media.controller.State.extend({
+	rgadmin.media.controller.revelglamImages = rgadmin.media.controller.State.extend({
 		handlers: {
 			'content:create:revelglam-mode-select': 'createModeSelect',
 		},
@@ -76,7 +77,7 @@ rgadmin.initMediaFrame = function() {
 			this.set('content', 'revelglam-mode-select');
 		},
 		createModeSelect: function(content) {
-			content.view = new media.view.revelglamModeSelect({
+			content.view = new rgadmin.media.view.revelglamModeSelect({
 				controller: this.frame,
 				model: this,
 			});
@@ -87,15 +88,12 @@ rgadmin.initMediaFrame = function() {
 rgadmin.addRevelGlamClicked = function(e) {
 	console.log('rgadmin.addRevelGlamClicked');
 	e.preventDefault();
-	var media = wp.media;
-	console.log(media);
-	
-	if(!media.frames.revelglam) {
-		media.frames.revelglam = wp.media.editor.open(wpActiveEditor, {
+	if(!rgadmin.media.frames.revelglam) {
+		rgadmin.media.frames.revelglam = wp.media.editor.open(wpActiveEditor, {
 			state: 'revelglam-images',
 			frame: 'post'
-		});
+		});	      
 	} else {
-		media.frames.revelglam.open(wpActiveEditor);
+		rgadmin.media.frames.revelglam.open(wpActiveEditor);
 	}
 }

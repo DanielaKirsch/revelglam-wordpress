@@ -144,13 +144,13 @@ class revelglam {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 			
 		// Add Revel Glam settings page to settings in wp-admin
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'revelglam_Private_Admin_Menu' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'revelglam_Admin_Menu' );
 		
 		// 'Add Revel Glam' button to post edit screen in wp-admin
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'revelglam_Add_Media_Button' );
 		
 		// Add Revel Glam media manager templates 
-		$this->loader->add_action( 'print_media_templates', $plugin_admin, 'revelglam_Print_Media_Templates' );
+		$this->loader->add_action( 'print_media_templates', $plugin_admin, 'revelglam_Add_Options' );
 		
 		// Do something when someone clicks on 'Add Revel Glam'
 

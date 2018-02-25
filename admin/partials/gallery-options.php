@@ -16,6 +16,8 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
 <script type="text/html" id="tmpl-revelglam-choose-mode">
+	<section>
 	<h2>Hi!</h2>
 	<p>This is the content box</p>
+	</section>
 </script>

@@ -122,8 +122,8 @@ class revelglam_Admin {
 	 *
 	 * @since    0.14
 	 */
-	public function revelglam_Private_Admin_Menu() {
-		add_options_page( 'RevelGlam Options', 'RevelGlam', 'manage_options', 'revelglam', array( $this, 'revelglam_Private_Admin_Menu_Options' ) );
+	public function revelglam_Admin_Menu() {
+		add_options_page( 'RevelGlam Options', 'RevelGlam', 'manage_options', 'revelglam', array( $this, 'revelglam_Admin_Menu_Options' ) );
 	}
 	
 	/**
@@ -131,18 +131,12 @@ class revelglam_Admin {
 	 *
 	 * @since    0.14
 	 */
-	public function revelglam_Private_Admin_Menu_Options() {		
+	public function revelglam_Admin_Menu_Options() {		
 		if ( !current_user_can( 'manage_options' ) )  {
 			wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 		}
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/admin-display.php';
 	}
-	
-	
-	
-	
-	
-	
 	
 	/**
 	 * 'Add Revel Glam' button to post edit screen
@@ -158,16 +152,9 @@ class revelglam_Admin {
 	 *
 	 * @since    0.1
 	 */
-	public function revelglam_Private_Add_Options() {
+	public function revelglam_Add_Options() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/gallery-options.php';		
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	/**
 	 * Check the plugin is authorised and subscription is up to date
