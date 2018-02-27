@@ -4,7 +4,7 @@ Donate link:
 Tags: 
 Requires at least: 3.5.0
 Tested up to: 4.9
-Stable tag: 0.12
+Stable tag: 0.13
 License: © RevelGlam 2018
 
 Add Brief description

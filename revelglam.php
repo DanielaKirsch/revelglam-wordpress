@@ -16,7 +16,7 @@
  * Plugin Name:       Revel Glam
  * Plugin URI:        https://revelglam.com
  * Description:       
- * Version:           0.11
+ * Version:           0.13
  * Author:            Revel Glam
  * Author URI:        http://revelglam.com/
  * Text Domain:       revelglam

@@ -10,6 +10,11 @@ http://localhost:8888/wordpress/
 
 TO DO
 
+working with wp.media
+
+https://github.com/ericandrewlewis/wp-media-javascript-guide
+https://github.com/Veraxus/nv-example-meta-box (NO USE)
+
 wp.media window open
 amend template to load images
 select an image and embed a shortcode
@@ -144,6 +149,10 @@ mobile
 
 
 CHANGELOG
+
+0.13
+2.26.2018
+wp-media window opens with RevelGlam as option
 
 0.12
 2.24.2018

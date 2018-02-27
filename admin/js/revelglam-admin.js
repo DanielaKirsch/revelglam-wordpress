@@ -43,7 +43,16 @@ rgadmin.initMediaFrame = function() {
 					new rgadmin.media.controller.revelglamImages({
 						id: 'revelglam-images',
 						title: 'RevelGlam',
-						content: 'revelglam-images-browse',
+						titleMode: 'default',
+						multiple: false,
+						content: 'revelglam-mode-select',
+						router: false,
+						menu: 'default',
+						toolbar: 'default',
+						sidebar: 'default',
+						selection: new rgadmin.media.model.Selection(null, { multiple: false }),
+						edge: 120,
+						gutter: 8
 					}),
 				]);
 			},

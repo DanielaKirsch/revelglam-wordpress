@@ -136,15 +136,15 @@ class revelglam {
 	private function define_admin_hooks() {	
 		$plugin_admin = new revelglam_Admin( $this->get_revelglam(), $this->get_version() );
 		
+		// Add Revel Glam settings page to settings in wp-admin
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'revelglam_Admin_Menu' );
+		
 		// Init all the needed JavaScript-Libraries and Styles
 		$this->loader->add_action( 'wp_enqueue_media', $plugin_admin, 'enqueue_media' );
 		
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-			
-		// Add Revel Glam settings page to settings in wp-admin
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'revelglam_Admin_Menu' );
 		
 		// 'Add Revel Glam' button to post edit screen in wp-admin
 		$this->loader->add_action( 'media_buttons', $plugin_admin, 'revelglam_Add_Media_Button' );
@@ -152,8 +152,7 @@ class revelglam {
 		// Add Revel Glam media manager templates 
 		$this->loader->add_action( 'print_media_templates', $plugin_admin, 'revelglam_Add_Options' );
 		
-		// Do something when someone clicks on 'Add Revel Glam'
-
+		// Do something when someone clicks on 'Add Revel Glam'	
 	}
 	
 	/**

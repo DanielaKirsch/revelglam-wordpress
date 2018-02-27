@@ -49,7 +49,10 @@ class revelglam_Admin {
 	 * @since    0.11
 	 */
 	public function enqueue_media() {
-		wp_enqueue_media();
+		$screen = get_current_screen();		
+		if ( $screen->post_type == 'post' && $screen->id == 'post' ) {
+			wp_enqueue_media();
+		}
 	}
 
 	
@@ -72,8 +75,10 @@ class revelglam_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_style( $this->revelglam, plugin_dir_url( __FILE__ ) . 'css/revelglam-admin.css', array(), $current_timestamp, 'all' );
+		$screen = get_current_screen();		
+		if ( $screen->post_type == 'post' && $screen->id == 'post' ) { 
+			wp_enqueue_style( $this->revelglam, plugin_dir_url( __FILE__ ) . 'css/revelglam-admin.css', array(), $current_timestamp, 'all' );
+		}
 	}
 
 	/**
@@ -95,8 +100,10 @@ class revelglam_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_script( $this->revelglam, plugin_dir_url( __FILE__ ) . 'js/revelglam-admin.js', array( 'jquery' ), $current_timestamp, false );
+		$screen = get_current_screen();		
+		if ( $screen->post_type == 'post' && $screen->id == 'post' ) {
+			wp_enqueue_script( $this->revelglam, plugin_dir_url( __FILE__ ) . 'js/revelglam-admin.js', array( 'jquery' ), $current_timestamp, false );
+		}
 	}
 	
 	/**
@@ -144,7 +151,10 @@ class revelglam_Admin {
 	 * @since    0.11
 	 */
 	public function revelglam_Add_Media_Button( $editor_id = 'content' ) { 
-		echo '<a href="#" id="insert-revelglam-button" class="button revelglam-activate add-media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr( 'Add RevelGlam', 'revelglam' ) . '"><span class="revelglam-buttons-icon"></span>' . esc_html( 'Add RevelGlam', 'revelglam' ) . '</a>';
+		$screen = get_current_screen();		
+		if ( $screen->post_type == 'post' && $screen->id == 'post' ) {
+			echo '<a href="#" id="insert-revelglam-button" class="button revelglam-activate add-media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr( 'Add RevelGlam', 'revelglam' ) . '"><span class="revelglam-buttons-icon"></span>' . esc_html( 'Add RevelGlam', 'revelglam' ) . '</a>';
+		}
 	}
 	
 	/**
@@ -153,7 +163,10 @@ class revelglam_Admin {
 	 * @since    0.1
 	 */
 	public function revelglam_Add_Options() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/gallery-options.php';		
+		$screen = get_current_screen();		
+		if ( $screen->post_type == 'post' && $screen->id == 'post' ) {
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/gallery-options.php';	
+		}	
 	}
 	
 	/**
