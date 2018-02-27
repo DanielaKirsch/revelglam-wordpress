@@ -150,6 +150,11 @@ mobile
 
 CHANGELOG
 
+0.14
+pulled remote
+resolved conflicts
+
+
 0.13
 2.26.2018
 wp-media window opens with RevelGlam as option

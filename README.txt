@@ -4,7 +4,7 @@ Donate link:
 Tags: 
 Requires at least: 3.5.0
 Tested up to: 4.9
-Stable tag: 0.13
+Stable tag: 0.14
 License: © RevelGlam 2018
 
 Add Brief description
@@ -21,17 +21,7 @@ Add Brief description
 
 == Changelog ==
 
-= 0.12 =
-* code opens wp.media window with test message and maintains original structure
-
-= 0.11 =
-* baseline plugin code
-* beginnings of admin code - opening wp.media window
-
 == Upgrade Notice ==
-
-= 0.12 =
-*  code in development
 
 == Author ==
 

@@ -16,60 +16,56 @@
  * Plugin Name:       Revel Glam
  * Plugin URI:        https://revelglam.com
  * Description:       
- * Version:           0.13
+ * Version:           0.14
  * Author:            Revel Glam
  * Author URI:        http://revelglam.com/
  * Text Domain:       revelglam
  * Domain Path:       /languages
  */
 
-class Revelglam_Images {
-	
-	private static $instance = false;
-	public static function instance() {
-		if( !self::$instance )
-			self::$instance = new Revelglam_Images;
-
-		return self::$instance;
-	}
-
-	private function __construct() {
-		// Enqueue essential assets
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue' ) );
-
-		// Add the revelglam Images media button
-		add_action( 'media_buttons', array( $this, 'media_buttons' ), 20 );
-
-		add_action( 'print_media_templates', array( $this, 'print_media_templates' ) );
-	}
-
-	/**
-	 * Include all of the templates used by Backbone views
-	 */
-	function print_media_templates() {
-		include( __DIR__ . '/revelglam-templates.php' );
-	}
-
-	function media_buttons( $editor_id = 'content' ) { ?>
-		<a href="#" class="button revelglam-images-activate"
-			data-editor="<?php echo esc_attr( $editor_id ); ?>"
-			title="RevelGlam"><span ></span>RevelGlam</a>
-	<?php
-	}
-
-	
-	function admin_enqueue() {
-
-		wp_enqueue_media();
-
-		$current_timestamp = time();
-		
-		wp_enqueue_script( 'revelglam-images', plugins_url( '/admin/js/revelglam-admin.js', __FILE__ ), array( ), $current_timestamp, true );
-
-	}
-
-
-
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
 }
 
-Revelglam_Images::instance();
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-revelglam-activator.php
+ */
+function activate_revelglam() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-revelglam-activator.php';
+	revelglam_Activator::activate();
+}
+
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/class-revelglam-deactivator.php
+ */
+function deactivate_revelglam() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-revelglam-deactivator.php';
+	revelglam_Deactivator::deactivate();
+}
+
+register_activation_hook( __FILE__, 'activate_revelglam' );
+register_deactivation_hook( __FILE__, 'deactivate_revelglam' );
+
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-revelglam.php';
+
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    0.1
+ */
+function run_revelglam() {
+	$plugin = new revelglam();
+	$plugin->run();
+}
+run_revelglam();

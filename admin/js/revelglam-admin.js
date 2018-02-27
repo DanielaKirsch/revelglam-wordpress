@@ -1,10 +1,30 @@
-
 // VARIABLES
 
 // set up a single object namespace for the bigflannel thumbgrid app
 var rgadmin = {};
 rgadmin.media;
 
+// data
+
+// status
+
+// counters
+var h;
+var i;
+var j;
+
+// options
+
+
+// INITIALIZE
+
+jQuery(document).ready(function() {
+	console.log('document ready');
+	rgadmin.init();
+});
+
+
+// FUNCTIONS
 
 rgadmin.init = function() {
 	console.log('rgadmin.init');
