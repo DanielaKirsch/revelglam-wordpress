@@ -105,4 +105,13 @@ rgadmin.addRevelGlamClicked = function(e) {
 	} else {
 		rgadmin.media.frames.revelglam.open(wpActiveEditor);
 	}
+	rgadmin.media.frames.revelglam.on('select', rgadmin.imageSelected);
 }
+
+rgadmin.imageSelected = function() {
+	console.log('rgadmin.imageSelected');
+}
+
+
+
+

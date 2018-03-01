@@ -10,16 +10,14 @@ http://localhost:8888/wordpress/
 
 TO DO
 
+need to add an insert button to wp.media
+need to add additional column that opens when user clicks on thumb, to display larger image and image size and placement options (including alingment of affiliate links - horizontal or vertical)
+need to add shortcode and image data to post when image inserted
+need to add code to render shortcode on front end
+
+
 working with wp.media
-
 https://github.com/ericandrewlewis/wp-media-javascript-guide
-https://github.com/Veraxus/nv-example-meta-box (NO USE)
-
-wp.media window open
-amend template to load images
-select an image and embed a shortcode
-act on shortcode
-add image url as featured image
 
 
 BEFORE GO LIVE
@@ -150,10 +148,14 @@ mobile
 
 CHANGELOG
 
+0.15
+3.12018
+added some demo images to gallery-options.php which are selectable
+
 0.14
+2.27.2018
 pulled remote
 resolved conflicts
-
 
 0.13
 2.26.2018
